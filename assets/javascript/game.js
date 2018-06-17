@@ -64,13 +64,13 @@ $(document).ready(function() {
       $(".show-and-hide").css("visibility", "visible");
       playerId = $(this).attr("id");
 
-      // adds class good to player choice
-      $(this).addClass("good");
+      // adds class hero to player choice
+      $(this).addClass("hero");
 
-      // adds class evil to all otehr heroes
-      $(this).siblings('div').addClass("evil");
+      // adds class enemy to all otehr heroes
+      $(this).siblings('div').addClass("enemy");
 
-      // stores previous this (my evil calss) into opponents variable
+      // stores previous this (my enemy calss) into opponents variable
       var opponents = $(this).siblings('div').detach();
 
       // stores player hero into player variable
@@ -87,7 +87,7 @@ $(document).ready(function() {
       }
     });
 
-    $("body").on("click", "div.evil", function(){
+    $("body").on("click", "div.enemy", function(){
 
       // sets equal to 0 if enemy hasn't been selected yet
       if (defenderOccupancyCounter === 0) {
@@ -96,11 +96,11 @@ $(document).ready(function() {
         defenderId = $(this).attr("id");
         $(this).addClass("currentDefender");
 
-        // detaches current enemy and stores it in currentEvil variable
-        var currentEvil = $(this).detach();
+        // detaches current enemy and stores it in currentEnemy variable
+        var currentEnemy = $(this).detach();
 
         // appends selected enemy with defender class
-        $(".defender").append(currentEvil);
+        $(".defender").append(currentEnemy);
 
         // increments DefenderOccupanceCounter variable
         defenderOccupancyCounter++;
@@ -118,12 +118,12 @@ $(document).ready(function() {
         // def health is damaged by amount of player hero attack
         heroArray[defenderId].healthPoints = heroArray[defenderId].healthPoints - heroArray[playerId].attackPower;
 
-        // selects the div class good with child p tag that has the health class then updates html
+        // selects the div class hero with child p tag that has the health class then updates html
         if ( heroArray[playerId].healthPoints > -1) {
-          $("div.good > p.health").html("health: " + heroArray[playerId].healthPoints);
+          $("div.hero > p.health").html("health: " + heroArray[playerId].healthPoints);
         } else {
             heroArray[playerId].healthPoints = 0;
-            $("div.good > p.health").html("health: " + heroArray[playerId].healthPoints);
+            $("div.hero > p.health").html("health: " + heroArray[playerId].healthPoints);
         }
 
         // selects div class urrentDefender with child p tag that has the health class then updates html

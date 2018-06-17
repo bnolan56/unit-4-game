@@ -40,6 +40,7 @@ h3 {
   background: #939bb0;
   display: inline-block;
   border: 1px solid #000;
+  border-radius: 4px;
   font-weight: bold;
   font-size: 14px;
 }
@@ -80,7 +81,7 @@ li {
 div.hero {
   background: #000;
   font-size: 14px;
-  color: black;
+  color: #000;
   border: 1px solid #000;
   background-color: #939bb0;
 }

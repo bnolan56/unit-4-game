@@ -64,6 +64,18 @@ p.character-name {
   margin-top: -20px;
 }
 
+.instructions {
+  background: none;
+  font-family: "Bangers", cursive;
+  color: #fff;
+  letter-spacing: .1em;
+  font-size: 14px;
+}
+
+li {
+  list-style: none;
+}
+
 /* Player Hero */
 div.hero {
   background: #000;
